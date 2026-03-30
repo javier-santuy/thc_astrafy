@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: orders_raw  
+    database: astrafy-491818  
+    schema: dbt_jsantuymunoz  
+    tables:
+      - name:  orders_recrutement
+      - name: sales_recrutement

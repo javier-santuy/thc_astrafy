@@ -1,7 +1,7 @@
 -- models/staging/stg_pedidos.sql
 
 with source as (
-    select * from {{ source('orders_raw', 'sales_recrutement') }}
+    select * from {{ source('astrafy', 'sales_recrutement') }}
 ),
 
 renamed as (

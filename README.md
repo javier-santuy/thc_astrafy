@@ -93,14 +93,5 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 ---
 
 ## 🎨 PART 3: Design Challenge
+[View Marketing KPIs Guide](03_design_challenge.pdf)
 
----
-
-### **(Bonus): Sales Performance Forecasting**
-
-**Objective:** Provide predictive insights for upcoming periods to assist in strategic resource allocation and inventory management.
-
-* **Weekly Projections:** Expected sales trends for the next 7-day cycle.
-* **Monthly Forecast:** Long-term performance anticipation based on historical seasonality.
-
----

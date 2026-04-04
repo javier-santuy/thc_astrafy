@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: astrafy 
     database: astrafy-491818  
-    schema: dbt_jsantuymunoz  
+    schema: sources 
     tables:
       - name:  orders_recrutement
       - name: sales_recrutement

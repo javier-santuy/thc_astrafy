@@ -8,10 +8,9 @@
 
 ## 🏗️ Data Architecture
 The project follows a modular structure within **dbt**, moving from raw data to business-ready tables:
-- **Source:** Raw Google Sheets data connected to BigQuery.
+- **Source:** Raw data connected to BigQuery.
 - **Staging:** Cleaned views with standardized column names and types.
-- **Marts:** Denormalized tables materialized for high performance in Looker Studio.
-- **Exercies** Queries created to solve each exercise
+- **Marts:** Final tables and views created to solve each exercise.
 
 ---
 # Project Documentation: Data Analysis & Design Challenge

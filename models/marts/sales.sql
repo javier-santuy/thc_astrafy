@@ -1,1 +1,0 @@
-select * from {{ ref('stg_orders_raw__sales_recrutement') }}

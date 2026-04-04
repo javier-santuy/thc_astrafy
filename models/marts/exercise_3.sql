@@ -4,7 +4,7 @@
 WITH
   summary AS (
     SELECT date_Date, order_id, sum(qty) as order_qty
-    from {{ ref('sales') }}
+    from {{ ref('stg_orders_raw__sales_recrutement') }}
     where date_date >= "2023-01-01" and date_date < "2024-01-01"
     GROUP BY date_date, order_id
   )

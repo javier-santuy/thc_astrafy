@@ -6,10 +6,10 @@ with source as (
 
 renamed as (
     select
-   date_date,
-   customer_id,
-   order_id,
-   products_id,
+   date_date as date,
+   cast(customer_id as STRING) as customer_id,
+   CAST(order_id AS STRING) as order_id,
+   CAST(products_id as STRING) as product_id,
    net_sales,
    qty
     from source

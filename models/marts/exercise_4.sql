@@ -3,7 +3,7 @@
 --gives the quantity of products in the order, for all orders in 2022 and 2023
 
 {{ config(materialized='table') }}
-   SELECT date_Date,customer_id, order_id,sum(net_sales) as sum_net_sales, sum(qty) AS qty_product
+   SELECT date,customer_id, order_id,sum(net_sales) as sum_net_sales, sum(qty) AS qty_product
     FROM {{ ref('stg_orders_raw__sales_recrutement') }}
-    WHERE date_date >= "2022-01-01" AND date_date < "2024-01-01"
-    GROUP BY date_date,customer_id, order_id
+    WHERE date >= "2022-01-01" AND date < "2024-01-01"
+    GROUP BY date,customer_id, order_id

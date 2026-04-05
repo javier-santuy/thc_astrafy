@@ -3,4 +3,4 @@
 SELECT 
     COUNT(*) AS orders_count 
 FROM {{ ref('stg_orders_raw__orders_recrutement') }}
-WHERE date_date >= "2023-01-01" AND date_date < "2024-01-01"
+WHERE date >= "2023-01-01" AND date < "2024-01-01"

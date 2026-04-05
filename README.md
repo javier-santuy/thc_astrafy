@@ -26,7 +26,7 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 
 ### 📖 Code 
 To use this code, you must create a dataset in BigQuery with the source tables. 
-By default, the project looks for a dataset named `sources`. If you use a different name, update the variable in `dbt_project.yml`:
+By default, the project looks for a dataset named `sources`. If you use a different name, update the variable in `sources/sources.yml`:
 
 ---
 
@@ -78,13 +78,6 @@ By default, the project looks for a dataset named `sources`. If you use a differ
 ### **Exercise 4:** Generate a consolidated table for all orders from 2022 and 2023, add the qty_product column that gives the quantity of products in the order
 [ 04_code ](models/marts/exercise_4.sql)
 
-
-| Required Field | Description |
-| :--- | :--- |
-| `order_id` | Unique transaction identifier. |
-| `date_date` | Date of the purchase. |
-| `qty_product` | Total quantity of products in the order. |
-
 ---
 
 ### **Exercise 5:** Define customer segments based on purchasing behavior within a rolling 12-month window prior to each order.
@@ -94,29 +87,17 @@ By default, the project looks for a dataset named `sources`. If you use a differ
 
 [ 05_code ](models/marts/exercise_5.sql)
 
-| Segment | Definition | Criteria (Prior 12 Months) |
-| :--- | :--- | :--- |
-| **New** | First order in the period. | 0 previous orders. |
-| **Returning** | Frequent customer activity. | Between 1 and 3 previous orders. |
-| **VIP** | High-value customer loyalty. | 4 or more previous orders. |
-
 ---
 
 ### **Exercise 6:** Create a table (1 line per order) for all orders of the year 2023 only; with an additional column: the order_segmentation column which gives the segment of this order
 
 [ 06_code ](models/marts/exercise_6.sql)
 
-| Field Name | Data Type | Description |
-| :--- | :--- | :--- |
-| `order_id` | ID | Unique identifier for the order. |
-| `client_id` | ID | Unique identifier for the customer. |
-| `order_segmentation` | String | Assigned category (New, Returning, or VIP). |
-
 ---
 
 ## 🛠️ PART 2: LookML - Semantic Layer
-Dashboard: https://lookerstudio.google.com/u/0/reporting/e7516093-c37e-43ce-85db-fb09624f1b44/page/644tF/edit
-LookML: 
+Dashboard: [Link](https://lookerstudio.google.com/u/0/reporting/e7516093-c37e-43ce-85db-fb09624f1b44/page/644tF/edit)
+LookML: [Model](analyses/lookML_model) [view](analyses/lookML_view)
 ---
 
 ## 🎨 PART 3: Design Challenge

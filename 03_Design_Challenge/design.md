@@ -1,10 +1,8 @@
-# 📊 MARKETING PERFORMANCE DASHBOARD
+# MARKETING PERFORMANCE DASHBOARD
 ### **Strategic KPI Framework**
 
 **Objective:** Track key performance indicators (KPIs) that will allow the marketing team to monitor business activity, identify trends in revenue fluctuations, and better understand their customer base of their e-commerce.
 
----
-KPIs
 ---
 
 ## 🟢 SPENDING EFFICIENCY

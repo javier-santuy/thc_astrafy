@@ -1,0 +1,17 @@
+
+connection: "connection_name"
+
+include: "/views/**/*.view"
+
+datagroup: ecommerce_etl_datagroup {
+  sql_trigger: SELECT MAX(id) FROM `your_project.your_dataset.stg_orders_raw__sales_recrutement` ;;
+  max_cache_age: "24 hours"
+  description: "Triggered by new records in the staging orders table. Used for order segmentation PDTs."
+}
+
+
+explore: order_segmentation {
+  label: "Order Segmentation Analysis"
+  description: "Analysis of customer loyalty and order frequency"
+  persist_with: ecommerce_etl_datagroup
+}

@@ -6,8 +6,8 @@
 
 ---
 
-## Tutorial 
-Loom link
+## 📖 Tutorial 
+
 ---
 
 ## 🔍 PART 1: Coding Challenge
@@ -21,20 +21,22 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 - **Source:** Raw data connected to BigQuery.
 - **Staging:** Cleaned views with standardized column names and types.
 - **Marts:** Final tables and views created to solve each exercise.
+
 ---
-### 📖 Code usage
+
+### 📖 Code 
 To use this code, you must create a dataset in BigQuery with the source tables. 
 By default, the project looks for a dataset named `sources`. If you use a different name, update the variable in `dbt_project.yml`:
+
 ---
+
 ### **Exercise 1:** Number of orders in the year 2023
 [ 01_code ](models/marts/exercise_1.sql)
 
 | Metric | Resulting Value |
 | :--- | :--- |
 | **Total Orders (2023)** | **2,573** |
-
 ---
-
 ### **Exercise 2:** Number of orders per month in the year 2023
 [ 02_code ](models/marts/exercise_2.sql)
 
@@ -54,7 +56,7 @@ By default, the project looks for a dataset named `sources`. If you use a differ
 | 12 | 2023-12-01 | 249 |
 
 ---
-### **Exercise 3:** Average number of products per order for each month of the year 2023
+### **Exercise 3:**Average number of products per order for each month of the year 2023
 [ 03_code ](models/marts/exercise_3.sql)
 
 | Month | Reference Date |
@@ -86,9 +88,9 @@ By default, the project looks for a dataset named `sources`. If you use a differ
 ---
 
 ### **Exercise 5:** Define customer segments based on purchasing behavior within a rolling 12-month window prior to each order.
-        - New: it's the 1st order of the customer (client_id) in the past 12 months. In the 12 months prior to this order, the customer did not place any orders.
-        - Returning: it's between the 2nd and the 4th order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed between 1 and 3 orders.
-        - VIP: it's the 5th or more order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed at least 4 orders or more.
+    - New: it's the 1st order of the customer (client_id) in the past 12 months. In the 12 months prior to this order, the customer did not place any orders.
+    - Returning: it's between the 2nd and the 4th order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed between 1 and 3 orders.
+    - VIP: it's the 5th or more order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed at least 4 orders or more.
 
 [ 05_code ](models/marts/exercise_5.sql)
 
@@ -112,8 +114,9 @@ By default, the project looks for a dataset named `sources`. If you use a differ
 
 ---
 
-## 🛠️ PART 2: LookML – Semantic Layer
-
+## 🛠️ PART 2: LookML - Semantic Layer
+Dashboard: https://lookerstudio.google.com/u/0/reporting/e7516093-c37e-43ce-85db-fb09624f1b44/page/644tF/edit
+LookML: 
 ---
 
 ## 🎨 PART 3: Design Challenge

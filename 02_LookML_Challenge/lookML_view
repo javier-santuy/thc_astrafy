@@ -1,6 +1,6 @@
 view: order_segmentation {
   derived_table: {
-    datagroup_trigger: ecommerce_etl_datagroup
+    datagroup_trigger: ecommerce_datagroup
     
     cluster_keys: ["customer_id"]
     partition_keys: ["order_date"]

@@ -56,7 +56,7 @@ By default, the project looks for a dataset named `sources`. If you use a differ
 | 12 | 2023-12-01 | 249 |
 
 ---
-### **Exercise 3:**Average number of products per order for each month of the year 2023
+### **Exercise 3:** Average number of products per order for each month of the year 2023
 [ 03_code ](models/marts/exercise_3.sql)
 
 | Month | Reference Date |
@@ -97,9 +97,8 @@ By default, the project looks for a dataset named `sources`. If you use a differ
 
 ## 🛠️ PART 2: LookML - Semantic Layer
 Dashboard: [Link](https://lookerstudio.google.com/u/0/reporting/e7516093-c37e-43ce-85db-fb09624f1b44/page/644tF/edit)
-LookML: [Model](analyses/lookML_model) [view](analyses/lookML_view)
+LookML: [Model](02_LookML_Challenge/model) [view](02_LookML_Challenge/view)
 ---
 
 ## 🎨 PART 3: Design Challenge
-[View Marketing KPIs Guide](03_design_challenge.md)
-
+[View Marketing KPIs Guide](03_Design_Challenge/design.md)

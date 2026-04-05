@@ -2,8 +2,6 @@
 ### **Strategic KPI Framework**
 
 **Objective:** Track key performance indicators (KPIs) that will allow the marketing team to monitor business activity, identify trends in revenue fluctuations, and better understand their customer base of their e-commerce.
- 
-**Title:** Daily Marketing Performance Monitor
 
 ---
 KPIs
@@ -23,7 +21,7 @@ KPIs
 ---
 
 ## 🔵 WEBSITE EFFECTIVENESS
-*Focus: Optimizing the user journey and identifying friction points.*
+*Focus: Optimizing the user journey.*
 
 ### **3. Conversion Rate (CR)**
 > **Definition:** The percentage of sessions that result in a purchase.  
@@ -36,7 +34,7 @@ KPIs
 ---
 
 ## 🟠 ATTRACTION
-*Focus: Identifying where your high-value traffic originates.*
+*Focus: Identifying where the high-value traffic originates.*
 
 ### **5. Traffic Source Breakdown**
 > **Definition:** Shows where visitors are coming from (Direct, Organic Search, Paid Social, Email, Referral).  

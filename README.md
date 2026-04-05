@@ -6,24 +6,28 @@
 
 ---
 
-## 🏗️ Data Architecture
-The project follows a modular structure within **dbt**, moving from raw data to business-ready tables:
-- **Source:** Raw data connected to BigQuery.
-- **Staging:** Cleaned views with standardized column names and types.
-- **Marts:** Final tables and views created to solve each exercise.
-
----
-# Project Documentation: Data Analysis & Design Challenge
-
+## Tutorial 
+Loom link
 ---
 
 ## 🔍 PART 1: Coding Challenge
 
+Objective: Solve 6 SQL code exercises using Bigquery and dbt
+
+--- 
+
+### 🏗️ Data Architecture
+The project follows a modular structure within **dbt**, moving from raw data to business-ready tables:
+- **Source:** Raw data connected to BigQuery.
+- **Staging:** Cleaned views with standardized column names and types.
+- **Marts:** Final tables and views created to solve each exercise.
 ---
-
-### **Exercise 1: Total Order Volume (2023)**
-
-**Objective:** Determine the total number of orders processed during the 2023 fiscal year.
+### 📖 Code usage
+To use this code, you must create a dataset in BigQuery with the source tables. 
+By default, the project looks for a dataset named `sources`. If you use a different name, update the variable in `dbt_project.yml`:
+---
+### **Exercise 1:** Number of orders in the year 2023
+[ 01_code ](models/marts/exercise_1.sql)
 
 | Metric | Resulting Value |
 | :--- | :--- |
@@ -31,9 +35,8 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 
 ---
 
-### **Exercise 2: Monthly Order Distribution (2023)**
-
-**Objective:** Analyze monthly order volumes for the year 2023 to identify seasonal trends and performance fluctuations.
+### **Exercise 2:** Number of orders per month in the year 2023
+[ 02_code ](models/marts/exercise_2.sql)
 
 | Month | Reference Date | Order Count |
 | :--- | :--- | :--- |
@@ -51,22 +54,43 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 | 12 | 2023-12-01 | 249 |
 
 ---
+### **Exercise 3:** Average number of products per order for each month of the year 2023
+[ 03_code ](models/marts/exercise_3.sql)
 
-### **Exercise 4: Data Enrichment – Product Quantity (2022-2023)**
+| Month | Reference Date |
+| :--- | :--- |
+| 1 | 12.17 |
+| 2 | 12.62 | 
+| 3 | 13.07 | 
+| 4 | 15.1 | 
+| 5 | 14.63 | 
+| 6 | 14.18 | 
+| 7 | 13.75 | 
+| 8 | 14.46 |
+| 9 | 13.67 |
+| 10 | 13.03 |
+| 11 | 10.48 | 
+| 12 | 11.33 |
+---
 
-**Objective:** Generate a consolidated table for all orders from 2022 and 2023, including a specific metric for the number of products per transaction.
+### **Exercise 4:** Generate a consolidated table for all orders from 2022 and 2023, add the qty_product column that gives the quantity of products in the order
+[ 04_code ](models/marts/exercise_4.sql)
+
 
 | Required Field | Description |
 | :--- | :--- |
 | `order_id` | Unique transaction identifier. |
-| `order_date` | Date of the purchase. |
+| `date_date` | Date of the purchase. |
 | `qty_product` | Total quantity of products in the order. |
 
 ---
 
-### **Exercise 5: Customer Segmentation Logic**
+### **Exercise 5:** Define customer segments based on purchasing behavior within a rolling 12-month window prior to each order.
+        - New: it's the 1st order of the customer (client_id) in the past 12 months. In the 12 months prior to this order, the customer did not place any orders.
+        - Returning: it's between the 2nd and the 4th order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed between 1 and 3 orders.
+        - VIP: it's the 5th or more order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed at least 4 orders or more.
 
-**Objective:** Define customer segments based on purchasing behavior within a rolling 12-month window prior to each order.
+[ 05_code ](models/marts/exercise_5.sql)
 
 | Segment | Definition | Criteria (Prior 12 Months) |
 | :--- | :--- | :--- |
@@ -76,9 +100,9 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 
 ---
 
-### **Exercise 6: 2023 Segmentation Implementation**
+### **Exercise 6:** Create a table (1 line per order) for all orders of the year 2023 only; with an additional column: the order_segmentation column which gives the segment of this order
 
-**Objective:** Apply the segmentation framework to all individual orders placed during the 2023 calendar year.
+[ 06_code ](models/marts/exercise_6.sql)
 
 | Field Name | Data Type | Description |
 | :--- | :--- | :--- |
@@ -93,5 +117,5 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 ---
 
 ## 🎨 PART 3: Design Challenge
-[View Marketing KPIs Guide](03_design_challenge.pdf)
+[View Marketing KPIs Guide](03_design_challenge.md)
 

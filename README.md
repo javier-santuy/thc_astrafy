@@ -6,10 +6,6 @@
 
 ---
 
-## 📖 Tutorial 
-
----
-
 ## PART 1: Coding Challenge
 
 Objective: Solve 6 SQL code exercises using Bigquery and dbt
@@ -24,23 +20,31 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 
 ---
 
-### Code 
-To use this code, you must create a dataset in BigQuery with the source tables. 
-By default, the project looks for a dataset named `sources`. If you use a different name, update the variable in `sources/sources.yml`:
+### 📖 Tutorial 
+1. Create a connection between bigquery and dbt
+2. Create a dataset in BigQuery with the source tables. By default, the project looks for a dataset named `sources` and table named `order_recrutement` and `sales_recrutement`. If you use a different names, update the variable in `sources/sources.yml`
+3. Once the sources are connected, verify that the code compiles using the `dbt compile` command. If the process completes successfully, execute `dbt run` to initiate the workflow.
+4. Onces the workflow is executed, two datasets will be created:
+    - Staging: Contains one view per source table to standardize column names and data types. This acts as an abstraction layer; if a source variable name changes, we only update this view, preventing any breaking changes in the final tables.
+    - Marts: Contains the final models (views and tables) engineered to fulfill the requirements of each exercise.
 
 ---
 
-### **Exercise 1:** Number of orders in the year 2023
+### **Exercise 1** 
+Number of orders in the year 2023  
 [ 01_code ](models/marts/exercise_1.sql)
 
-| Metric | Resulting Value |
+| | |
 | :--- | :--- |
 | **Total Orders (2023)** | **2,573** |
+
 ---
-### **Exercise 2:** Number of orders per month in the year 2023
+
+### **Exercise 2** 
+Number of orders per month in the year 2023  
 [ 02_code ](models/marts/exercise_2.sql)
 
-| Month | Reference Date | Order Count |
+| Month | Date | Order Count |
 | :--- | :--- | :--- |
 | 1 | 2023-01-01 | 232 |
 | 2 | 2023-02-01 | 176 |
@@ -56,10 +60,11 @@ By default, the project looks for a dataset named `sources`. If you use a differ
 | 12 | 2023-12-01 | 249 |
 
 ---
-### **Exercise 3:** Average number of products per order for each month of the year 2023
+### **Exercise 3** 
+Average number of products per order for each month of the year 2023  
 [ 03_code ](models/marts/exercise_3.sql)
 
-| Month | Reference Date |
+| Month | avg_products_order |
 | :--- | :--- |
 | 1 | 12.17 |
 | 2 | 12.62 | 
@@ -75,29 +80,35 @@ By default, the project looks for a dataset named `sources`. If you use a differ
 | 12 | 11.33 |
 ---
 
-### **Exercise 4:** Generate a consolidated table for all orders from 2022 and 2023, add the qty_product column that gives the quantity of products in the order
+### **Exercise 4** 
+
+Generate a consolidated table for all orders from 2022 and 2023, add the qty_product column that gives the quantity of products in the order  
 [ 04_code ](models/marts/exercise_4.sql)
 
 ---
 
-### **Exercise 5:** Define customer segments based on purchasing behavior within a rolling 12-month window prior to each order.
+### **Exercise 5**
+
+Define customer segments based on purchasing behavior within a rolling 12-month window prior to each order.
     - New: it's the 1st order of the customer (client_id) in the past 12 months. In the 12 months prior to this order, the customer did not place any orders.
     - Returning: it's between the 2nd and the 4th order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed between 1 and 3 orders.
-    - VIP: it's the 5th or more order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed at least 4 orders or more.
-
+    - VIP: it's the 5th or more order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed at least 4 orders or more.  
 [ 05_code ](models/marts/exercise_5.sql)
 
 ---
 
-### **Exercise 6:** Create a table (1 line per order) for all orders of the year 2023 only; with an additional column: the order_segmentation column which gives the segment of this order
+### **Exercise 6** 
 
+Create a table (1 line per order) for all orders of the year 2023 only; with an additional column: the order_segmentation column which gives the segment of this order  
 [ 06_code ](models/marts/exercise_6.sql)
 
 ---
 
 ## 🛠️ PART 2: LookML - Semantic Layer
-Dashboard: [Link](https://lookerstudio.google.com/u/0/reporting/e7516093-c37e-43ce-85db-fb09624f1b44/page/644tF/edit)
 LookML: [Model](02_LookML_Challenge/model) [view](02_LookML_Challenge/view)
+Dashboard: [Link](https://lookerstudio.google.com/u/0/reporting/e7516093-c37e-43ce-85db-fb09624f1b44/page/644tF/edit)
+Dashboard: [Source](models/marts/exercise_6.sql)
+
 ---
 
 ## 🎨 PART 3: Design Challenge

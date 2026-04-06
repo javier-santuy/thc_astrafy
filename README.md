@@ -35,52 +35,20 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 
 ### **Exercise 1** 
 Number of orders in the year 2023  
-[ 01_code ](models/marts/exercise_1.sql)
-
-| | |
-| :--- | :--- |
-| **Total Orders (2023)** | **2,573** |
+[ 01_code ](models/marts/exercise_1.sql) / [Results](https://docs.google.com/spreadsheets/d/1Sj8RnuK_dSUgZehdQAFnvlzgIeIHveZZvUegsXt_rFs/edit?gid=0#gid=0)
 
 ---
 
 ### **Exercise 2** 
 Number of orders per month in the year 2023  
-[ 02_code ](models/marts/exercise_2.sql)
-
-| Month | Date | Order Count |
-| :--- | :--- | :--- |
-| 1 | 2023-01-01 | 232 |
-| 2 | 2023-02-01 | 176 |
-| 3 | 2023-03-01 | 203 |
-| 4 | 2023-04-01 | 188 |
-| 5 | 2023-05-01 | 172 |
-| 6 | 2023-06-01 | 169 |
-| 7 | 2023-07-01 | 193 |
-| 8 | 2023-08-01 | 167 |
-| 9 | 2023-09-01 | 212 |
-| 10 | 2023-10-01 | 223 |
-| 11 | 2023-11-01 | 389 |
-| 12 | 2023-12-01 | 249 |
+[ 02_code ](models/marts/exercise_2.sql) / [Results](https://docs.google.com/spreadsheets/d/1Sj8RnuK_dSUgZehdQAFnvlzgIeIHveZZvUegsXt_rFs/edit?gid=1181334633#gid=1181334633)
 
 ---
+
 ### **Exercise 3** 
 Average number of products per order for each month of the year 2023  
-[ 03_code ](models/marts/exercise_3.sql)
+[ 03_code ](models/marts/exercise_3.sql) / [Results](https://docs.google.com/spreadsheets/d/1Sj8RnuK_dSUgZehdQAFnvlzgIeIHveZZvUegsXt_rFs/edit?gid=1377026664#gid=1377026664)
 
-| Month | avg_products_order |
-| :--- | :--- |
-| 1 | 12.17 |
-| 2 | 12.62 | 
-| 3 | 13.07 | 
-| 4 | 15.1 | 
-| 5 | 14.63 | 
-| 6 | 14.18 | 
-| 7 | 13.75 | 
-| 8 | 14.46 |
-| 9 | 13.67 |
-| 10 | 13.03 |
-| 11 | 10.48 | 
-| 12 | 11.33 |
 ---
 
 ### **Exercise 4** 

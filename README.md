@@ -91,10 +91,9 @@ Generate a consolidated table for all orders from 2022 and 2023, add the qty_pro
 ---
 
 ### **Exercise 5**
-
-Define customer segments based on purchasing behavior within a rolling 12-month window prior to each order.
-    - New: it's the 1st order of the customer (client_id) in the past 12 months. In the 12 months prior to this order, the customer did not place any orders.
-    - Returning: it's between the 2nd and the 4th order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed between 1 and 3 orders.
+Define customer segments based on purchasing behavior within a rolling 12-month window prior to each order.  
+    - New: it's the 1st order of the customer (client_id) in the past 12 months. In the 12 months prior to this order, the customer did not place any orders.  
+    - Returning: it's between the 2nd and the 4th order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed between 1 and 3 orders.  
     - VIP: it's the 5th or more order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed at least 4 orders or more.  
 [ 05_code ](models/marts/exercise_5.sql)
 
@@ -108,7 +107,8 @@ Create a table (1 line per order) for all orders of the year 2023 only; with an 
 ---
 
 ## 🛠️ PART 2: LookML - Semantic Layer
-LookML: [Model](02_LookML_Challenge/model) [view](02_LookML_Challenge/view)  
+LookML: [Model](02_LookML_Challenge/lookML_model)  
+LookML: [view](02_LookML_Challenge/lookML_view)  
 Dashboard: [Link](https://lookerstudio.google.com/u/0/reporting/e7516093-c37e-43ce-85db-fb09624f1b44/page/644tF/edit)  
 Dashboard: [Source](models/marts/exercise_6.sql)
 

@@ -10,13 +10,13 @@
 
 ---
 
-## 🔍 PART 1: Coding Challenge
+## PART 1: Coding Challenge
 
 Objective: Solve 6 SQL code exercises using Bigquery and dbt
 
 --- 
 
-### 🏗️ Data Architecture
+### Data Architecture
 The project follows a modular structure within **dbt**, moving from raw data to business-ready tables:
 - **Source:** Raw data connected to BigQuery.
 - **Staging:** Cleaned views with standardized column names and types.
@@ -24,7 +24,7 @@ The project follows a modular structure within **dbt**, moving from raw data to 
 
 ---
 
-### 📖 Code 
+### Code 
 To use this code, you must create a dataset in BigQuery with the source tables. 
 By default, the project looks for a dataset named `sources`. If you use a different name, update the variable in `sources/sources.yml`:
 
@@ -101,4 +101,4 @@ LookML: [Model](02_LookML_Challenge/model) [view](02_LookML_Challenge/view)
 ---
 
 ## 🎨 PART 3: Design Challenge
-[View Marketing KPIs Guide](03_Design_Challenge/design.md)
+[View Marketing KPIs Guide](03_Design_Challenge/marketing_kpis.pdf)

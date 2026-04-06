@@ -1,3 +1,5 @@
+-- Exercise 6 Create a table (1 line per order) for all orders of the year 2023 only; with an additional column: the order_segmentation column which gives the segment of this order
+
 {{ config(materialized='table') }}
 
 WITH orders_base AS (

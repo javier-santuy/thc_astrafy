@@ -1,13 +1,16 @@
---Exercice 5: Order segmentation
+--Exercice 5: Orders are segmented into 3 groups:
+    --New: it's the 1st order of the customer (client_id) in the past 12 months. In the 12 months prior to this order, the customer did not place any orders
+    --Returning: it's between the 2nd and the 4th order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed between 1 and 3 orders
+    --VIP: it's the 5th or more order of the customer in the past 12 months. In the 12 months prior to this order, the customer had already placed at least 4 orders or more
+--Calculate for each order placed in 2023, the segment of this order.
 
 
-
-WITH orders_with_history AS (
+WITH orders_with_history AS ( 
     SELECT 
         order_id,
         customer_id,
         date,
-        COUNT(*) OVER (
+        COUNT(*) OVER ( -- Count how many orders the customer placed in the last 365 days
             PARTITION BY customer_id 
             ORDER BY UNIX_DATE(date) 
             RANGE BETWEEN 365 PRECEDING AND 1 PRECEDING

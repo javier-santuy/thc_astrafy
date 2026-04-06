@@ -14,15 +14,18 @@ Objective: Solve 6 SQL code exercises using Bigquery and dbt
 
 ### Data Architecture
 The project follows a modular structure within **dbt**, moving from raw data to business-ready tables:
-- **Source:** Raw data connected to BigQuery.
-- **Staging:** Cleaned views with standardized column names and types.
-- **Marts:** Final tables and views created to solve each exercise.
+- **Models**
+    - **Source:** The sources.yml file defines the connection to the raw data hosted in BigQuery.
+    - **Staging:** Cleaned views with standardized column names and types.
+    - **Marts:** Final tables and views created to solve each exercise.
+- **Macros** When the workflow executes this file makes sure to have clean dataset names
+- **dbt_project.yml** Defines settings for the project (directory paths for models and macros and materialization strategy)
 
 ---
 
 ### 📖 Tutorial 
 1. Create a connection between bigquery and dbt
-2. Create a dataset in BigQuery with the source tables. By default, the project looks for a dataset named `sources` and table named `order_recrutement` and `sales_recrutement`. If you use a different names, update the variable in `sources/sources.yml`
+2. Create a dataset in BigQuery with the source tables. By default, the project looks for a dataset named `sources` and table named `order_recrutement` and `sales_recrutement`. If you use a different names, update the variable in `models/sources/sources.yml`
 3. Once the sources are connected, verify that the code compiles using the `dbt compile` command. If the process completes successfully, execute `dbt run` to initiate the workflow.
 4. Onces the workflow is executed, two datasets will be created:
     - Staging: Contains one view per source table to standardize column names and data types. This acts as an abstraction layer; if a source variable name changes, we only update this view, preventing any breaking changes in the final tables.
@@ -105,8 +108,8 @@ Create a table (1 line per order) for all orders of the year 2023 only; with an 
 ---
 
 ## 🛠️ PART 2: LookML - Semantic Layer
-LookML: [Model](02_LookML_Challenge/model) [view](02_LookML_Challenge/view)
-Dashboard: [Link](https://lookerstudio.google.com/u/0/reporting/e7516093-c37e-43ce-85db-fb09624f1b44/page/644tF/edit)
+LookML: [Model](02_LookML_Challenge/model) [view](02_LookML_Challenge/view)  
+Dashboard: [Link](https://lookerstudio.google.com/u/0/reporting/e7516093-c37e-43ce-85db-fb09624f1b44/page/644tF/edit)  
 Dashboard: [Source](models/marts/exercise_6.sql)
 
 ---
